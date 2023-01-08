@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carnet.css">
+    <script src="https://kit.fontawesome.com/5f9b97f34f.js" crossorigin="anonymous"></script>
+    <title>CARNET UNIVERSITARIO</title>
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <!-- TARJETA -->
+            <section id="tarjeta" class="tarjeta">
+
+                <!-- PARTE DELANTERA -->
+
+                <div class="delantera" id="delantera">
+    
+                    <div class="logo">
+    
+                        <img src="media/logo1.jpg" alt="">
+    
+                    </div>
+    
+                    <div class="tarjeta_cuerpo">
+    
+                        <div class="img_alumno" id="preview">
+                            <img src="" alt="" id="imgPreview">
+                        </div>
+    
+                        <div class="dt_alumno">
+    
+                            <div class="grupo" id="nombres">
+                                <p class="label">Nombres:</p>
+                                <p class="nombres sub">*******</p>
+                            </div>
+    
+                            <div class="grupo" id="apellidos">
+                                <p class="label">Apellidos:</p>
+                                <p class="apellidos sub">*******</p>
+                            </div>
+    
+                            <div class="grupo" id="carrera">
+                                <p class="label">Carrera:</p>
+                                <p class="carrera sub">*******</p>
+                            </div>
+    
+                            <div class="grupo" id="codigo">
+                                <p class="label">Código:</p>
+                                <p class="codigo sub">*******</p>
+                            </div>
+    
+                            <div class="grupo" id="dni">
+                                <p class="label">DNI:</p>
+                                <p class="dni sub">*******</p>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    
+                    
+                    <div class="tarjeta_footer">
+                        
+                        <div class="barra_delantera"></div>
+    
+                        <p>CARNET UNIVERSITARIO</p>
+    
+                    </div>
+                </div>
+                
+                <!-- PARTE TRASERA -->
+
+                <div class="trasera" id="trasera">
+    
+                    <div class="barra"></div>
+    
+                    <div class="parte_arriba">
+                        <div class="logo">
+                            <img src="media/campus.svg" alt="">
+                        </div>
+                        <div class="vencimiento">
+                            <p class="text1">Fecha de Experación:</p> 
+                            <p class="text2 diaExp" id="diaExp">****</p>
+                            <p class="text2">/</p>
+                            <p class="text2 mesExp" id="mesExp">****</p>
+                            <p class="text2">/</p>
+                            <p class="text2 yearExp" id="yearExp">****</p>
+                        </div>
+                    </div>
+    
+                    <div class="frase">
+                        <p>
+                            "En la UTP todo es posible <br>
+                            Tecnología como forma de pensar."
+                        </p>
+                    </div>
+    
+                    <div class="link">
+                        <a href="https://www.utp.edu.pe/" target="_blank">www.utp.edu.pe</a>
+                        <div class="utp_logo">
+                            <img src="media/logo1.jpg" alt="">
+                        </div>
+                    </div>
+    
+                    <div class="barra"></div>
+                </div>
+    
+            </section>
+
+        <!-- BOTON ABRIR FORMULARIO -->
+        <div class="contenedor-btn">
+            <button class="btn_abrir_form" id="btn_abrir_form">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+
+        <!-- FORMULARIO -->
+
+        <form action="" id="form_tarjeta" class="form_tarjeta">
+            <div class="grupo">
+                <label for="inputNombre">NOMBRES COMPLETOS</label>
+                <input type="text" id="inputNombres" placeholder="Nombres completos:" autocomplete="off">
+            </div>
+
+            <div class="grupo">
+                <label for="inputApellido">APELLIDOS COMPLETOS</label>
+                <input type="text" id="inputApellidos" placeholder="Apellidos completos:" autocomplete="off">
+            </div>
+
+            <div class="grupo">
+                <label for="inputCarrera">CARRERA</label>
+                <input type="text" id="inputCarrera" placeholder="Carrera:" autocomplete="off">
+            </div>
+
+            <div class="grupo">
+                <label for="inputCodigo">CÓDIGO</label>
+                <input type="text" id="inputCodigo" maxlength="9" placeholder="Código:" autocomplete="off">
+            </div>
+
+            <div class="grupo">
+                <label for="inputDni">DNI</label>
+                <input type="text" id="inputDni" maxlength="8" placeholder="DNI:" autocomplete="off">
+            </div>
+
+            <!-- FORMULARIO - INSERTAR FOTOGRAFÍA -->
+
+            <div class="grupo">
+                <label for="">INSERTE SU FOTOGRAFÍA</label>
+                <input type="file" id="inputFile" placeholder="Inserte su foto" accept="image/png, .jpeg, .jpg" onchange="previewImage(event, '#imgPreview')">
+            </div>
+
+            <!-- FORMULARIO - FECHA DE INSCRIPCIÓN -->
+
+            <div class="flexbox">
+
+                <div class="grupo insc">
+
+                    <label for="selectDia">INSCRIPCIÓN:</label>
+
+                    <div class="flexbox">
+
+                        <div class="grupo_select">
+                            <select name="dia" id="selectDia" onchange="seleccionDia();">
+                                <option value="" disabled selected id="diaExp_form">Día</option>
+                            </select>
+
+                        </div>
+
+                        <div class="grupo_select">
+                            <select name="mes" id="selectMes" onchange="seleccionMes();">
+                                <option value="" disabled selected>Mes</option>
+                            </select>
+
+                        </div>
+
+                        <div class="grupo_select">
+                            <select name="year" id="selectYear" onchange="seleccionYear();">
+                                <option value="" disabled selected>Año</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn_enviar">Enviar</button>
+        </form>
+
+    </div>
+    
+    <script src="carnet.js"></script>
+
+</body>
+</html>

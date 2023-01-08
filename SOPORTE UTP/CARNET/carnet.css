@@ -1,0 +1,327 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(100, 100, 100);
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 800px;
+    padding: 40px 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ****************************************** ESTILOS GENERALES DE LAS TARJETAS ****************************************/
+
+.tarjeta {
+    width: 100%;
+    max-width: 800px;
+    min-width: 800px;
+    position: relative;
+    color: rgb(250, 250, 250);
+    transition: all 1s ease;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.contenedor .tarjeta.active {
+    transform: rotateY(180deg);
+}
+
+.tarjeta > div {
+    padding: 30px;
+    border-radius: 15px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 10px 0 rgb(90, 116, 148, 0.3);
+}
+
+/* ******************************************** DELANTERA *******************************************/
+
+.tarjeta .delantera {
+    width: 100%;
+    background: #eacda3;  
+    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);  
+    background: linear-gradient(to right, #d6ae7b, #eacda3); 
+}
+
+.delantera .logo {
+    text-align: center;
+}
+
+/* ********************* DELANTERA ----> CUERPO ********************/
+
+.delantera .tarjeta_cuerpo {
+    width: 100%;
+    display: flex;
+}
+
+.delantera .tarjeta_cuerpo .img_alumno {
+    width: 250px;
+    height: 250px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delantera .tarjeta_cuerpo .img_alumno img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.delantera .tarjeta_cuerpo .dt_alumno {
+    width: 70%;
+    padding-left: 20px;
+}
+
+.delantera .tarjeta_cuerpo .dt_alumno .label {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.delantera .tarjeta_cuerpo .dt_alumno .sub {
+    color: rgb(50, 50, 50);
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ********************* DELANTERA ----> FOOTER ********************/
+
+.delantera .tarjeta_footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+}
+
+.delantera .barra_delantera {
+    height: 5px;
+    width: 100%;
+    background: rgb(80, 80, 80);
+}
+
+/* ******************************************** TRASERA *******************************************/
+
+.tarjeta .trasera {
+    width: 100%;
+    background: #6D6027; 
+    background: -webkit-linear-gradient(to right, #D3CBB8, #6D6027);  
+    background: linear-gradient(to right, #D3CBB8, #6D6027);
+
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* ********************* TRASERA ----> BARRA ********************/
+
+.tarjeta .trasera .barra {
+    height: 30px;
+    width: 100%;
+    background: rgb(80, 80, 80);
+}
+
+/* ********************* TRASERA ----> ARRIBA ********************/
+
+.tarjeta .trasera .parte_arriba {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(0, 0, 0);
+}
+
+.tarjeta .trasera .parte_arriba .logo {
+    width: 100px;
+}
+
+.tarjeta .trasera .parte_arriba .logo img {
+    width: 100%;
+}
+
+.tarjeta .trasera .parte_arriba .vencimiento {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tarjeta .trasera .parte_arriba .vencimiento .text2 {
+    display: inline-block;
+    padding-left: 40px;
+    padding-top: 15px;
+}
+
+/* ********************* TRASERA ----> MEDIO ********************/
+
+.tarjeta .trasera .frase {
+    width: 80%;
+    margin: auto;
+}
+
+.tarjeta .trasera .frase p {
+    text-align: center;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+/* ********************* TRASERA ----> ABAJO ********************/
+
+.tarjeta .trasera .link {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.tarjeta .trasera .link a {
+    align-items: flex-end;
+}
+.tarjeta .trasera .link img {
+    width: 150px;
+}
+
+/* ******************************** BTN - ABRIR FORMULARIO *********************************/
+
+.contenedor-btn .btn_abrir_form {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 20px;
+    background: #2364d2;
+    color: rgb(250, 250, 25025);
+    position: relative;
+    top: -25px;
+    z-index: 3;
+    border-radius: 100%;
+    box-shadow: -5px 4px 8px rgba(24, 56, 182, .4);
+    padding: 5px;
+    transition: all .5s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.contenedor-btn .btn_abrir_form:hover {
+    background: #1850b1;
+}
+
+.contenedor-btn .btn_abrir_form.active {
+    transform: rotate(45deg);
+}
+
+/* ************************************** FORMULARIO ***************************************/
+
+.form_tarjeta {
+    background-color: rgb(250, 250, 250);
+    width: 100%;
+    max-width: 800px;
+    padding: 300px 30px 30px 30px;
+    border-radius: 10px;
+    position: relative;
+    top: -300px;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: all .5s ease-out;
+}
+
+.form_tarjeta.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.form_tarjeta label {
+    display: block;
+    color: rgb(0, 0, 0);
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.form_tarjeta input,
+.form_tarjeta select,
+.btn_enviar {
+    border: 2px solid #CED6E0;
+    font-size: 15px;
+    height: 40px;
+    width: 100%;
+    padding: 5px 12px;
+    transition: all .5s ease;
+    border-radius: 5px;
+}
+
+.form_tarjeta input:hover,
+.form_tarjeta select:hover {
+    border: 2px solid #93BDED;
+}
+
+.form_tarjeta input:focus,
+.form_tarjeta select:focus {
+    outline: rgb(4, 4, 4);
+    box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, .3);
+}
+
+.form_tarjeta input {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* ********************* FORMULARIO ----> INSCRIPCIÓN ********************/
+
+.form_tarjeta .flexbox {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form_tarjeta .insc {
+    width: 100%;
+}
+
+.form_tarjeta .grupo_select {
+    width: 100%;
+    position: relative;
+    margin-right: 15px;
+}
+
+.form_tarjeta .grupo_select i:hover {
+    color: #93bfed;
+}
+
+/* ********************* FORMULARIO ----> BOTON - ENVIAR ********************/
+
+.form_tarjeta .btn_enviar {
+    border: none;
+    padding: 10px;
+    font-size: 22px;
+    margin-top: 10px;
+    color: rgb(250, 250, 250);
+    background: #2364d2;
+    box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, .4);
+    cursor: pointer;
+}
+
+.form_tarjeta .btn_enviar:hover {
+    background: #1850b1;
+}
